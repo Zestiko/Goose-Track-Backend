@@ -1,30 +1,39 @@
 const mongoose = require("mongoose");
 const tasksPriority = require('../constants/tasksPriority')
-
+const COLUMNS_TITLE = require('../constants/COLUMNS_TITLE')
 
 const tasksShema = new mongoose.Schema({
   title: {
     type: String,
     required: [true, "Set title "],
   },
-  start: {
+  startTime: {
     type: Number,
     required: [true, "Set start time"],
     unique: [true, "Duplicated start time.."],
   },
-  end: {
+  endTime: {
     type: Number,
     required: [true, "Set end time"],
   },
-  role: {
+  priority: {
     type: String,
-    enum: Object.values(tasksPriority),
+    enum: Object.values(tasksPriority), // ["low","medium","hight"]
     default: tasksPriority.LOW,
   },
   owner: {
     type: mongoose.Types.ObjectId,
     ref: "users",
     // required: [true, "Todo must have an owner.."],
+  },
+  column: {
+    type: String,
+    enum: Object.values(COLUMNS_TITLE), // ["toDo","inProgress","done"]
+    default: COLUMNS_TITLE.TODO,
+  },
+  taskDate: {
+    type: Number,
+    required: [true, "Set taskDate"],
   },
 });
 
