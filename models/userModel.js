@@ -15,7 +15,7 @@ const usersShema = new mongoose.Schema({
     required: [true, "Email is required"],
     unique: [true, "Duplicated email.."],
   },
-  birthyear: {
+  birthday: {
     type: Number,
   },
   token: String,

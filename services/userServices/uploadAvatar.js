@@ -6,12 +6,15 @@ const { AppError } = require("../../utils");
 const uploadAvatar = async (req, res) => {
   try {
     const result = await cloudinary.uploader.upload(req.file.path);
+    console.log(result)
     const user = await User.findByIdAndUpdate(
-      req.user._id,
-      { avatarUrl: result.secure_url },
+      req.user.id,
+      { avatar: result.secure_url },
       { new: true }
-    );
-    res.json(user);
+    )
+res.status(200).json({
+    user,
+  });
   } catch (error) {
     throw new AppError(500, error.message);
   }
