@@ -3,7 +3,7 @@ const PASSWD_REGEX = require("../../constants/PASSWD_REGEX");
 
 const validateNewUser = (reqBody) => {
   const schema = Joi.object({
-    name: Joi.string().min(2).max(10),
+    userName: Joi.string().min(2).max(10),
     email: Joi.string()
       .email({
         minDomainSegments: 2,
