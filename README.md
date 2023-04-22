@@ -1,46 +1,64 @@
-# Goose Track (back-end)
+# Goose Track (backend)
 
-### Над розробкою сервера в рамках курсу ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) працювали:
+## Overview
 
-- Team lead [Владислав Алєксєєв](https://github.com/Zestiko)
-- Scrum master [Максим Аверкін](https://github.com/Maxoverking)
-- Developer [Кошель Іван](https://github.com/Ivan-GoIT)
-- Developer [Писаренко Тетяна](https://github.com/TetianaVielkova)
-- Developer [Сергій Литвин](https://github.com/Serhii0406)
-- Developer [Марина Вишневська](https://github.com/MarynaVyshnevska)
-- Developer [Павло Липчанський](https://github.com/Pablo-Lipchanskyi)
-- Developer [Олександр Подоляк](https://github.com/BlackyHat)
-- Developer [Микола Лях](https://github.com/Nikolaylyah)
-- Developer [Игорь Юровский](https://github.com/Mastermind2025)
+This repository is the backend for the [Goose Track](https://github.com/Zestiko)
+application, developed as part of the **_NodeJS_** course.
 
-## Технічна документація як працювати з сервером:
+## Contributors
 
-Clone this repository, open Terminal
+The following team members worked on the server:
 
-> Add npm commands :
+- Team lead: [Vladyslav
+  Alekseev][владислав алєксєєв](https://github.com/Zestiko)
+- Scrum master: [Maxim Averkin] [Максим Аверкін](https://github.com/Maxoverking)
+- Developers:
+  - [Ivan Koshel][кошель іван](https://github.com/Ivan-GoIT)
+  - [Tetiana Pysarenko] [Писаренко Тетяна](https://github.com/TetianaVielkova)
+  - [Serhii Lytvyn] [Сергій Литвин](https://github.com/Serhii0406)
+  - [Maryna Vyshnevska] [Марина Вишневська](https://github.com/MarynaVyshnevska)
+  - [Pavlo Lipchanskyi]
+    [Павло Липчанський](https://github.com/Pablo-Lipchanskyi)
+  - [Oleksandr Podoliak][олександр подоляк](https://github.com/BlackyHat)
+  - [Mykola Liakh] [Микола Лях](https://github.com/Nikolaylyah)
+  - [Igor Yurovskyi] [Игорь Юровский](https://github.com/Mastermind2025)
+
+## Installation and Usage
+
+To get started with the server, follow these steps:
+
+1. Clone this repository to your local machine.
+2. Open the terminal and navigate to the project directory.
+3. Run the following commands:
 
 ```
 npm i
-npm start - production
-npm run dev - development
+npm start (for production)
+npm run dev (for development)
 ```
 
-### Операції які виконує сервер _***Endpoints***_ :
+## Endpoints
 
-- реєстрації User в додатку [Goose Track](https://github.com/Zestiko) -
-  /auth/register.
-- логін User -/auth/login .
-- повертатає інформацію про користувача -/user/current.
-- видяляє активну сесію користувача на сервері -/user/logout.
-- редагування данних про User PATCH -/user/info.
-- _Endpoints_ для роботы з завданнями User :
-  - Oтримання колекції завданнь GET -/tasks
-  - Cтворення завдання POST -/tasks.
-  - Редагування завдання PATCH -/tasks/{id}.
-  - Видалення завдання DELETE -/tasks/{id} .
-- _Endpoints_ для роботи з колекцією колонок :
-  - Oтримання колекції GET -/columns .
-  - Cтворення елемента колекції POST -/columns .
-  - Редагування елемента колекції змінюючи його місцем з попереднім або
-    наступним елементом PATCH -/columns/{id} .
-  - Видалення елемента колекції DELETE -/columns/{id} .
+The server provides the following endpoints:
+
+- /auth/register: Registers a new user in the Goose Track application.
+- /auth/login: Logs in an existing user.
+- /user/current: Retrieves information about the current user.
+- /user/logout: Deletes the current user's active session on the server.
+- /user/info: Updates the current user's information.
+- /tasks: Provides endpoints for managing a user's tasks:
+  - GET /tasks: Retrieves a collection of tasks.
+  - POST /tasks: Creates a new task.
+  - PATCH /tasks/{id}: Updates an existing task.
+  - DELETE /tasks/{id}: Deletes an existing task.
+- /columns: Provides endpoints for managing a collection of columns:
+  - GET /columns: Retrieves a collection of columns.
+  - POST /columns: Creates a new column.
+  - PATCH /columns/{id}: Updates an existing column by changing its position
+    with the previous or next column.
+  - DELETE /columns/{id}: Deletes an existing column.
+
+## Technologies Used
+
+- Node.js
+- Express.js
