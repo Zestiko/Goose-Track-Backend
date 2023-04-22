@@ -12,9 +12,9 @@ router.get("/", getAllTasksController);
 
 router.post("/", createTask);
 
-router.patch("/:tasktId", (req, res, next) => {});
+router.patch("/:taskId", (req, res, next) => {});
 
-router.delete("/:tasktId", (req, res, next) => {});
+router.delete("/:taskId", (req, res, next) => {});
 
 
 
