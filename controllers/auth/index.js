@@ -1,5 +1,5 @@
-const createUser = require("./createUser");
+const registerController = require("./registerController");
 
 module.exports = {
-  createUser,
+  registerController,
 };

@@ -1,6 +1,6 @@
 const date = require("./date");
 const catchAsync = require("./cathAsync");
-const AppError = require("./appEror");
+const AppError = require("./AppError");
 
 module.exports = {
   date,
