@@ -1,5 +1,4 @@
+const checkAuth = require('./checkAuth');
 const validateAuthRegister = require("./validateAuthRegister");
 
-module.exports = {
-    validateAuthRegister,
-};
+module.exports = {checkAuth, validateAuthRegister};
