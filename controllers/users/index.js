@@ -1,3 +1,4 @@
 const getCurrent = require('./getCurrent');
+const patchUserInfo = require('./patchUserInfo');
 
-module.exports = { getCurrent, };
+module.exports = { getCurrent, patchUserInfo };
