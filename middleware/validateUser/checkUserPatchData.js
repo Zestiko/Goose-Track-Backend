@@ -1,18 +1,19 @@
-const { catchAsync } = require('../../utils');
+const { catchAsync, getPropertiesFromObj, AppError } = require('../../utils');
 const validateUserInfo = require('../../utils/Joi/validateUserInfo');
 
 const checkUserPatchData = catchAsync(async (req, _, next) => {
 
-    if(Object.getOwnPropertyNames(obj).length === 0) return next()
+    if(Object.getOwnPropertyNames(req.body).length === 0) return next()
 
   const keysForPatch = [
-    'name',
+    'userName',
     'birthday',
     'email',
     'phone',
     'telegram',
     'avatar',
   ];
+
 
   const dataForPutch = getPropertiesFromObj(keysForPatch, req.body);
 
