@@ -19,7 +19,7 @@ The following team members worked on the server:
   - [Maryna Vyshnevska] [Марина Вишневська](https://github.com/MarynaVyshnevska)
   - [Pavlo Lipchanskyi]
     [Павло Липчанський](https://github.com/Pablo-Lipchanskyi)
-  - [Oleksandr Podoliak][олександр подоляк](https://github.com/BlackyHat)
+  - [Oleksandr Podoliako][олександр подоляко](https://github.com/BlackyHat)
   - [Mykola Liakh] [Микола Лях](https://github.com/Nikolaylyah)
   - [Igor Yurovskyi] [Игорь Юровский](https://github.com/Mastermind2025)
 
