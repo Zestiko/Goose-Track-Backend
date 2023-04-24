@@ -1,14 +1,15 @@
-const { date, catchAsync } = require("../../utils");
+const { catchAsync } = require("../../utils");
 
 const { addTask } = require("../../services/tasksServices");
 
-const createTask = catchAsync(async (req, res, next) => {
-  console.log(req.body);
-  const task = await addTask(req.body);
-  res.status(200).json({
-    Date: date(),
-    task,
-  });
+const createTaskController = catchAsync(async (req, res, next) => {
+  const { body: newTask } = req;
+  const { _id: owner } = req.user;
+
+  await addTask(newTask, owner);
+  res
+    .status(201)
+    .json({ message: "Success. Task was created.", ...newTask });
 });
 
-module.exports = createTask;
+module.exports = createTaskController;

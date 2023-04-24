@@ -1,5 +1,11 @@
-const createTask = require('./createTask')
+const createTaskController = require('./createTask');
+const getAllTasksController = require('./getAllTasks');
+const removeTaskController = require('./removeTask');
+const updateTaskController = require('./updateTask');
 
 module.exports = {
-  createTask,
+  createTaskController,
+  getAllTasksController,
+  removeTaskController,
+  updateTaskController,
 };
