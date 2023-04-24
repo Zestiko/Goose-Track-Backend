@@ -6,7 +6,7 @@
  */
 const getPropertiesFromObj = (properties, obj) => {
   return properties.reduce((resObj, prop) => {
-    if (obj.hasOwnProperty(prop)) {
+    if (Object.prototype.hasOwnProperty.call(obj, prop)) {
       resObj[prop] = obj[prop];
     }
     return resObj;
