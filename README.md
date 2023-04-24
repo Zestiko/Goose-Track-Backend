@@ -10,16 +10,16 @@ application, developed as part of the **_NodeJS_** course.
 The following team members worked on the server:
 
 - Team lead: [Vladyslav
-  Alekseev][владислав алєксєєв](https://github.com/Zestiko)
+  Alieksieiev][Владислав Алєксєєв](https://github.com/Zestiko)
 - Scrum master: [Maxim Averkin] [Максим Аверкін](https://github.com/Maxoverking)
 - Developers:
-  - [Ivan Koshel][кошель іван](https://github.com/Ivan-GoIT)
-  - [Tetiana Pysarenko] [Писаренко Тетяна](https://github.com/TetianaVielkova)
+  - [Ivan Koshel][Іван Кошель](https://github.com/Ivan-GoIT)
+  - [Tetiana Pysarenko] [Тетяна Писаренко](https://github.com/TetianaVielkova)
   - [Serhii Lytvyn] [Сергій Литвин](https://github.com/Serhii0406)
   - [Maryna Vyshnevska] [Марина Вишневська](https://github.com/MarynaVyshnevska)
   - [Pavlo Lipchanskyi]
     [Павло Липчанський](https://github.com/Pablo-Lipchanskyi)
-  - [Oleksandr Podoliako][олександр подоляко](https://github.com/BlackyHat)
+  - [Oleksandr Podoliako][Олександр Подоляко](https://github.com/BlackyHat)
   - [Mykola Liakh] [Микола Лях](https://github.com/Nikolaylyah)
   - [Igor Yurovskyi] [Игорь Юровский](https://github.com/Mastermind2025)
 
