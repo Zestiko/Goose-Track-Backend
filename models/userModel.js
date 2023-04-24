@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const usersShema = new mongoose.Schema({
-  name: {
+  userName: {
     type: String,
     required: [true, "Set name for user"],
   },
@@ -15,11 +15,11 @@ const usersShema = new mongoose.Schema({
     required: [true, "Email is required"],
     unique: [true, "Duplicated email.."],
   },
-  birthyear: {
+  birthday: {
     type: Number,
   },
   token: String,
-  phone: Number,
+  phone: String,
   telegram: String,
   avatar: String,
   // verify: {

@@ -1,5 +1,9 @@
-const addUser = require('./addUser')
+const getAvatarPathFromCloud = require('../../middleware/getAvatarPathFromCloud');
+const registerUser = require('./registerUser');
+const uploadCloudParams = require('./uploadCloudParams');
 
 module.exports = {
-  addUser,
+  registerUser,
+  uploadCloudParams,
+  getAvatarPathFromCloud,
 };

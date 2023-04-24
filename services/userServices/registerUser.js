@@ -1,7 +1,7 @@
 const User = require("../../models/userModel");
 const { AppError } = require("../../utils");
 
-const addUser = async (data) => {
+const registerUser = async (data) => {
   try {
     const newUser = await User.create(data);
     return newUser;
@@ -10,4 +10,4 @@ const addUser = async (data) => {
   }
 };
 
-module.exports = addUser;
+module.exports = registerUser;

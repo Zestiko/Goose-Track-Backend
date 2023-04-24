@@ -1,3 +1,3 @@
-const AVATAR_URL_REGEX=/(https?):\/\/([^:/\s]+)((?:\/[^\s/]*))*/g
+const AVATAR_URL_REGEX = /^(https?):\/\/([^:/\s]+)((?:\/[^\s/]*))*/;
 
-module.exports=AVATAR_URL_REGEX;
+module.exports = AVATAR_URL_REGEX;
