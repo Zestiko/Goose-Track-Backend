@@ -1,14 +1,14 @@
 const express = require("express");
 const { createTaskController, getAllTasksController, removeTaskController, updateTaskController } = require("../../controllers/tasks");
-const validateTask = require("../../utils/Joi/validateTask");
+const { validTask } = require("../../middleware/validateTasks");
 
 const router = express.Router();
 
 router.get("/", getAllTasksController);
 
-router.post("/", validateTask,createTaskController);
+router.post("/", validTask,createTaskController);
 
-router.patch("/:taskId", validateTask, updateTaskController);
+router.patch("/:taskId", validTask, updateTaskController);
 
 router.delete("/:taskId", removeTaskController);
 
