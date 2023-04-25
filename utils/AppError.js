@@ -4,5 +4,14 @@ class AppError extends Error {
     this.status = status;
   }
 }
-
-module.exports = AppError;
+class Unauthorized extends Error {
+  constructor(message) {
+      super(message);
+      this.status = 401;
+      this.message = message;
+  }
+}
+module.exports = {
+  AppError,
+  Unauthorized
+} 

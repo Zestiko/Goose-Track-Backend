@@ -22,11 +22,6 @@ const checkAuth = catchAsync(async (req, res, next) => {
     return next(
       new AppError(401, "Your session has been terminated, please login again")
     );
-
-  /** for check */
-//   const currentUser = await User.findById('6442a1998994bf4ab20b20b2');
-//   if (!currentUser) return next(new AppError(401, 'Your session has been terminated, please login again'));
-
   req.user = currentUser;
 
   next();
