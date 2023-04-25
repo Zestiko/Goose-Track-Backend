@@ -1,7 +1,7 @@
 const tasksPriority = {
   LOW: "low",
   MEDIUM: "medium",
-  HIGHT: "hight",
+  HIGHT: "high",
 };
 
 module.exports = tasksPriority;

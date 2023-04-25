@@ -10,7 +10,7 @@ const tasksShema = new mongoose.Schema({
   startTime: {
     type: Number,
     required: [true, "Set start time"],
-    unique: [true, "Duplicated start time.."],
+    // unique: [true, "Duplicated start time.."],
   },
   endTime: {
     type: Number,
@@ -18,7 +18,7 @@ const tasksShema = new mongoose.Schema({
   },
   priority: {
     type: String,
-    enum: Object.values(tasksPriority), // ["low","medium","hight"]
+    enum: Object.values(tasksPriority), // ["low","medium","high"]
     default: tasksPriority.LOW,
   },
   owner: {
@@ -32,7 +32,8 @@ const tasksShema = new mongoose.Schema({
     default: COLUMNS_TITLE.TODO,
   },
   taskDate: {
-    type: Number,
+    type: Date,
+    default: Date.now,
     required: [true, "Set taskDate"],
   },
 });
