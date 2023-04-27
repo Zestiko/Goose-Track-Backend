@@ -8,7 +8,7 @@ const { logOutController } = require('../../controllers/auth/LogOutController');
 const router = express.Router();
 
 router.get('/current', checkAuth, usersController.getCurrent);
-router.post('/logout', logOutController);
+router.post('/logout', checkAuth, logOutController);
 
 router.patch(
   '/info',

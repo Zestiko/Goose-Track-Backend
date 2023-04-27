@@ -7,25 +7,16 @@ const checkAuth = catchAsync(async (req, res, next) => {
     req.headers.authorization?.startsWith("Bearer") &&
     req.headers.authorization.split(" ")[1];
   if (!token)
-    return next(new AppError(401, "Not authorized, you have not token "));
+    return next(new AppError(401, "Not authorized "));
 
-  let decoded;
-  try {
-    decoded = jwt.verify(token, process.env.JWT_SECRET);
-  } catch (error) {
-    console.log(error.message);
-    next(new AppError(401, "Not authorized, you have not token "));
+  const {id} = jwt.verify(token, process.env.JWT_SECRET);
+  
+
+  const currentUser = await User.findById(id);
+  if (!currentUser || currentUser.token !== token) {
+    return next(new AppError(401, 'Not authorized'));
   }
 
-  const currentUser = await User.findById(decoded.id);
-  if (!currentUser)
-    return next(
-      new AppError(401, "Your session has been terminated, please login again")
-    );
-
-  /** for check */
-//   const currentUser = await User.findById('6442a1998994bf4ab20b20b2');
-//   if (!currentUser) return next(new AppError(401, 'Your session has been terminated, please login again'));
 
   req.user = currentUser;
 
