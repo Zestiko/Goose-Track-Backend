@@ -4,7 +4,7 @@ const getCurrent = (req, res, next) => {
     // console.log('name', name, 'email', email, 'birthyear',birthyear, 'phone', phone, 'telegram',telegram, 'avatar',avatar, 'token', token);
 
   res.json({
-    status: "success",
+    status: 'success',
     code: 200,
     user: {
       name,
@@ -13,8 +13,8 @@ const getCurrent = (req, res, next) => {
       phone,
       telegram,
       avatar,
-      token,
     },
+    token,
   });
 };
 
