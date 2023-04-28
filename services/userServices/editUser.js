@@ -7,11 +7,7 @@ const editUserInfo = async (id,data) => {
     const user = await User.findByIdAndUpdate(
       id,
         {
-            name,
-            email,
-            birthday,
-            phone,
-            telegram         
+          ...data      
         },
       { new: true }
     );
