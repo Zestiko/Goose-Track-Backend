@@ -34,7 +34,7 @@ const tasksShema = new mongoose.Schema({
   taskDate: {
     type: Date,
     default: Date.now,
-    required: [true, "Set taskDate"],
+    // required: [true, "Set taskDate"],
   },
 });
 

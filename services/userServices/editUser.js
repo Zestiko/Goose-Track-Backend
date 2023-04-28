@@ -3,7 +3,6 @@ const { AppError } = require("../../utils");
 
 const editUserInfo = async (id,data) => {
   try {
-    const { name,email,birthday,phone,telegram } = data;
     const user = await User.findByIdAndUpdate(
       id,
         {

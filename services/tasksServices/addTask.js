@@ -6,13 +6,13 @@ const addTask = async (newTask, owner) => {
   const { title, startTime, endTime, taskDate } = newTask;
 
   if (!title) {
-    throw new AppError(400, "Error. Missing required name field.");
+    throw new AppError(400, 'Error. Missing required title field.');
   } else if (!startTime) {
-    throw new AppError(400, "Error. Missing required phone field.");
+    throw new AppError(400, 'Error. Missing required startTime field.');
   } else if (!endTime) {
-    throw new AppError(400, "Error. Missing required email field.");
+    throw new AppError(400, 'Error. Missing required endTime field.');
   } else if (!taskDate) {
-    throw new AppError(400, "Error. Missing required email field.");
+    throw new AppError(400, 'Error. Missing required taskDate field.');
   }
 
   const task = new Task({ ...newTask, owner });

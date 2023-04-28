@@ -9,7 +9,7 @@ const createTaskController = catchAsync(async (req, res, next) => {
   await addTask(newTask, owner);
   res
     .status(201)
-    .json({ message: "Success. Task was created.", ...newTask });
+    .json({ message: 'Success. Task was created.', task: newTask });
 });
 
 module.exports = createTaskController;
