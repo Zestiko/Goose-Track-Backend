@@ -9,20 +9,23 @@ const signToken = (id) =>
   });
 
 const registerController = catchAsync(async (req, res) => {
-  const {email} = req.body;
-  const user = await User.findOne({ email })
+  const { email: requestEmail } = req.body;
+  const user = await User.findOne({ requestEmail });
   if (user) {
     throw new AppError(409, 'Email in use');
   }
 
-  const newUser = await registerUser(req.body);
+  const { id, userName, email } = await registerUser(req.body);
 
   // Токен
-  const token = signToken(newUser.id);
-  await User.findByIdAndUpdate(newUser.id, { token });
+  const token = signToken(id);
+  await User.findByIdAndUpdate(id, { token });
   
   res.status(200).json({
-    newUser,
+    user: {
+      userName,
+      email,
+    },
     token,
   });
 });

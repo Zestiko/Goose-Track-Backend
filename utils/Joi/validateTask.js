@@ -1,9 +1,9 @@
 const Joi = require('joi');
 const { tasksPriority, COLUMNS_TITLE } = require('../../constants');
-const date = require('../date');
+
 
 const validateTask = reqBody => {
-  console.log(date())
+
   const schema = Joi.object({
     title: Joi.string().min(3).max(30).optional(),
     startTime: Joi.number().integer().optional(),

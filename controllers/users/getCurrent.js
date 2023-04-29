@@ -1,15 +1,14 @@
 const getCurrent = (req, res, next) => {
-  const { name, email, birthyear, phone, telegram, avatar, token } = req.user;
-   /** for check */
-    // console.log('name', name, 'email', email, 'birthyear',birthyear, 'phone', phone, 'telegram',telegram, 'avatar',avatar, 'token', token);
+const { userName, email, birthday, token, phone, telegram, avatar } = req.user;
+
 
   res.json({
     status: 'success',
     code: 200,
     user: {
-      name,
+      userName,
+      birthday,
       email,
-      birthyear,
       phone,
       telegram,
       avatar,

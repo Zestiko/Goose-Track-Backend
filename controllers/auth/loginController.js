@@ -9,9 +9,9 @@ const signToken = id =>
   });
 
 const loginController = catchAsync(async (req, res, next) => {
-  const { email, password } = req.body;
+  const { email: requestEmail, password } = req.body;
 
-  const user = await loginUser(email);
+  const user = await loginUser(requestEmail);
 
   if (!user) {
     return next(new AppError(401, 'Email or password is wrong'));
@@ -23,15 +23,21 @@ const loginController = catchAsync(async (req, res, next) => {
   }
 
   user.password = undefined;
-  console.log(user.id);
+  const { userName, email, birthday, phone, telegram, avatar, id } = user;
 
-  const token = signToken(user.id);
-  await saveTokenToUser(user.id, token);
+
+  const token = signToken(id);
+  await saveTokenToUser(id, token);
 
   res.status(200).json({
     Date: date(),
     user: {
-      email: user.email,
+      userName,
+      birthday,
+      email,
+      phone,
+      telegram,
+      avatar,
     },
     token,
   });
