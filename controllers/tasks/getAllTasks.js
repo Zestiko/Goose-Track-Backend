@@ -1,16 +1,16 @@
-const getTasks = require("../../services/tasksServices/getTasks");
-const { catchAsync } = require("../../utils");
+const getTasks = require('../../services/tasksServices/getTasks');
+const { catchAsync } = require('../../utils');
 
 const getAllTasksController = catchAsync(async (req, res) => {
-    const { _id: owner } = req.user;
-    const { date } = req.body;
+  const { _id: owner } = req.user;
+  const date = req.query.date;
 
-  const tasks = await getTasks(owner,date);
+  const tasks = await getTasks(owner, date);
 
   res.status(200).json({
     message: 'Success',
-    tasks
-  })
-})
+    tasks,
+  });
+});
 
 module.exports = getAllTasksController;

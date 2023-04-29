@@ -2,7 +2,8 @@ const Task = require('../../models/tasksModel');
 const { AppError } = require('../../utils');
 
 const getTasks = async (owner, date) => {
-  const currentDate = date || new Date();
+  const currentDate = date ? new Date(date) : new Date();
+
   const firstDayOfMonth = new Date(
     currentDate.getFullYear(),
     currentDate.getMonth(),
@@ -16,6 +17,8 @@ const getTasks = async (owner, date) => {
     59,
     59
   );
+  console.log('lastDayOfMonth', lastDayOfMonth);
+  console.log('firstDayOfMonth', firstDayOfMonth);
 
   const tasks = await Task.find({
     owner,
