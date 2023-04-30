@@ -4,19 +4,19 @@ const bcrypt = require("bcrypt");
 const usersShema = new mongoose.Schema({
   userName: {
     type: String,
-    required: [true, "Set name for user"],
+    required: [true, 'Set name for user'],
   },
   password: {
     type: String,
-    required: [true, "Set password for user"],
+    required: [true, 'Set password for user'],
   },
   email: {
     type: String,
-    required: [true, "Email is required"],
-    unique: [true, "Duplicated email.."],
+    required: [true, 'Email is required'],
+    unique: [true, 'Duplicated email..'],
   },
   birthday: {
-    type: Date,
+    type: mongoose.Mixed,
   },
   token: String,
   phone: String,
