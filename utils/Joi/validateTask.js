@@ -1,13 +1,13 @@
 const Joi = require('joi');
-const { tasksPriority, COLUMNS_TITLE } = require('../../constants');
+const { tasksPriority, COLUMNS_TITLE ,TIME_REGEX } = require('../../constants');
 
 
 const validateTask = reqBody => {
 
   const schema = Joi.object({
     title: Joi.string().min(3).max(30).optional(),
-    startTime: Joi.number().integer().optional(),
-    endTime: Joi.number().integer().optional(),
+    startTime: Joi.string().regex(TIME_REGEX).optional(),
+    endTime: Joi.string().regex(TIME_REGEX).optional(),
     priority: Joi.string()
       .valid(...Object.values(tasksPriority))
       .optional(),

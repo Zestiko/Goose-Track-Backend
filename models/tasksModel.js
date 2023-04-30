@@ -5,16 +5,16 @@ const COLUMNS_TITLE = require('../constants/COLUMNS_TITLE')
 const tasksShema = new mongoose.Schema({
   title: {
     type: String,
-    required: [true, "Set title "],
+    required: [true, 'Set title '],
   },
   startTime: {
-    type: Number,
-    required: [true, "Set start time"],
+    type: String,
+    required: [true, 'Set start time'],
     // unique: [true, "Duplicated start time.."],
   },
   endTime: {
-    type: Number,
-    required: [true, "Set end time"],
+    type: String,
+    required: [true, 'Set end time'],
   },
   priority: {
     type: String,
@@ -23,7 +23,7 @@ const tasksShema = new mongoose.Schema({
   },
   owner: {
     type: mongoose.Types.ObjectId,
-    ref: "users",
+    ref: 'users',
     // required: [true, "Todo must have an owner.."],
   },
   column: {

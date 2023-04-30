@@ -16,7 +16,7 @@ const usersShema = new mongoose.Schema({
     unique: [true, 'Duplicated email..'],
   },
   birthday: {
-    type: mongoose.Mixed,
+    type: String,
   },
   token: String,
   phone: String,
