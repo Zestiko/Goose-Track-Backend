@@ -24,7 +24,7 @@ const tasksShema = new mongoose.Schema({
   owner: {
     type: mongoose.Types.ObjectId,
     ref: 'users',
-    // required: [true, "Todo must have an owner.."],
+    required: [true, "Todo must have an owner.."],
   },
   column: {
     type: String,
