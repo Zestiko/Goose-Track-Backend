@@ -8,7 +8,7 @@ const validateUserInfo = data =>
     email: Joi.string().email().optional(),
     phone: Joi.string().regex(PHONE_NUMBER_REGEX).optional(),
     telegram: Joi.string().min(3).optional(),
-    avatar: Joi.string().regex(AVATAR_URL_REGEX).optional(),
+    avatar: Joi.string().optional(),
   }).options({ abortEarly: false }).validate(data);
 
 module.exports = validateUserInfo;
