@@ -17,6 +17,7 @@ const addTask = async (newTask, owner) => {
 
   const task = new Task({ ...newTask, owner });
   await task.save();
+  return task;
 };
 
 module.exports = addTask;

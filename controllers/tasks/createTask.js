@@ -6,10 +6,10 @@ const createTaskController = catchAsync(async (req, res, next) => {
   const { body: newTask } = req;
   const { _id: owner } = req.user;
 
-  await addTask(newTask, owner);
+ const task = await addTask(newTask, owner);
   res
     .status(201)
-    .json({ message: 'Success. Task was created.', task: newTask });
+    .json({ message: 'Success. Task was created.', task});
 });
 
 module.exports = createTaskController;
